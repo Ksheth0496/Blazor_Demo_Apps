@@ -1,0 +1,112 @@
+﻿@page "/"
+@using BlazorServerApp_Stocks.Hubs;
+@using BlazorServerApp_Stocks.Shared
+@using Microsoft.AspNetCore.SignalR.Client
+@using Newtonsoft.Json;
+
+@inject NavigationManager NavigationManager
+
+<h1>Stock Updates</h1>
+
+@if (stocks == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stock in stocks)
+            {
+                <tr>
+                    <td>@stock.Symbol</td>
+                    <td>@stock.Price</td>
+                    <td>
+                        <button class="btn btn-danger" @onclick="() => DeleteStock(stock.Symbol, stock.Price)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h3>Add New Stock</h3>
+    <form @onsubmit="AddStock">
+        <div class="form-group">
+            <label for="symbol">Symbol</label>
+            <input type="text" class="form-control" id="symbol" @bind-value="newStock.Symbol" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" @bind-value="newStock.Price" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Add Stock</button>
+    </form>
+}
+
+@code {
+    private List<Stock> stocks;
+    private HubConnection hubConnection;
+    HttpClient Http = new HttpClient();
+    private string _hubUrl;
+    private Stock newStock = new Stock();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var baseUri = NavigationManager.BaseUri;
+        _hubUrl = baseUri.TrimEnd('/') + StockUpdatesHub.HubUrl;
+        hubConnection = new HubConnectionBuilder()
+            .WithUrl(_hubUrl)
+            .Build();
+
+        hubConnection.On<Stock>("StockAdded", (stock) =>
+        {
+            InvokeAsync(() =>
+            {
+                var existingStock = stocks.FirstOrDefault(s => s.Symbol == stock.Symbol && s.Price == stock.Price);
+                if (existingStock == null)
+                {
+                    stocks.Add(stock);
+                }
+                StateHasChanged();
+            });
+        });
+        hubConnection.On<Stock>("StockRemoved", (stock) =>
+        {
+            InvokeAsync(() =>
+            {
+                var existingStock = stocks.Find(s => s.Symbol == stock.Symbol && s.Price == stock.Price);
+                if (existingStock != null)
+                {
+                    stocks.Remove(existingStock);
+                }
+                StateHasChanged();
+            });
+        });
+
+        await hubConnection.StartAsync();
+
+        var response = await hubConnection.InvokeAsync<List<Stock>>("GetAllStocks");
+        stocks = response;
+    }
+    private async Task AddStock()
+    {
+        stocks.Add(newStock);
+        await hubConnection.SendAsync("AddStock", newStock);
+        newStock = new Stock();
+    }
+    private async Task DeleteStock(string symbol, decimal price)
+    {
+        Stock stockToRemove = stocks.Find(x => x.Symbol == symbol && x.Price == price);
+        if(stockToRemove != null)
+        {
+            stocks.Remove(stockToRemove);
+            await hubConnection.SendAsync("RemoveStock", stockToRemove);
+        }
+    }
+}

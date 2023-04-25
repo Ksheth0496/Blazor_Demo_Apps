@@ -1,0 +1,124 @@
+﻿@*Blazor Component*@
+@page "/todos"
+@using BlazorWebAssembly.Models;
+@using BlazorWebAssembly.Services;
+
+<h1>Todo List</h1>
+<div class="col-md-4 float-right">
+
+    <button class="btn btn-primary" @onclick="() => DisplayAddForm()">Add</button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Is Complete</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todoItem in todoItems)
+        {
+            <tr>
+                <td>@todoItem.Title</td>
+                <td><input type="checkbox" @bind="todoItem.IsComplete"></td>
+                <td>
+                    <button class="btn btn-primary" @onclick="() => EditTodoItem(todoItem)">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteTodoItem(todoItem.Id)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (showAddForm)
+{
+    <h2>Add Todo Item</h2>
+
+    <form @onsubmit="AddTodoItem">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" @bind="newTodoItem.Title">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Add</button>
+            <button type="button" class="btn btn-secondary mt-3" @onclick="CancelAdd">Cancel</button>
+    </form>
+}
+
+
+@if (showEditForm)
+{
+    <h2>Edit Todo Item</h2>
+
+    <form @onsubmit="UpdateTodoItem" style="width:50%">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" @bind="selectedTodoItem.Title">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Save</button>
+        <button type="button" class="btn btn-secondary mt-3" @onclick="CancelEdit">Cancel</button>
+    </form>
+}
+
+@code {
+    private List<TodoItem> todoItems;
+    private TodoItem newTodoItem = new TodoItem();
+    private TodoItem selectedTodoItem = new TodoItem();
+    private bool showEditForm = false;
+    private bool showAddForm = false;
+
+    protected override void OnInitialized()
+    {
+        var todoService = new TodoService();
+        todoItems = todoService.GetAll();
+    }
+
+    private void DisplayAddForm()
+    {
+        showAddForm = true;
+        showEditForm = false;
+    }
+
+    private void AddTodoItem()
+    {
+        var todoService = new TodoService();
+        todoService.Add(newTodoItem);
+        todoItems = todoService.GetAll();
+        newTodoItem = new TodoItem();
+        showAddForm = false;
+    }
+    private void CancelAdd()
+    {
+        newTodoItem = new TodoItem();
+        showAddForm = false;
+    }
+
+    private void EditTodoItem(TodoItem todoItem)
+    {
+        selectedTodoItem = todoItem;
+        showEditForm = true;
+        showAddForm = false;
+    }
+
+    private void UpdateTodoItem()
+    {
+        var todoService = new TodoService();
+        todoService.Update(selectedTodoItem);
+        todoItems = todoService.GetAll();
+        selectedTodoItem = new TodoItem();
+        showEditForm = false;
+    }
+
+    private void DeleteTodoItem(int id)
+    {
+        var todoService = new TodoService();
+        todoService.Delete(id);
+        todoItems = todoService.GetAll();
+    }
+
+    private void CancelEdit()
+    {
+        selectedTodoItem = new TodoItem();
+        showEditForm = false;
+    }
+}
