@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H7hvs/XPWAU+mfaledKAfsTAai0tdtF2GS8K5q6+kQRprFDp3PJjtwgXqbI2g2Y7MYsYr1kzFNobUO+zFkCf6w==",
+  "dgSpecHash": "382ofRKs5CyF2CfTiPXZsed53aLCF00OS0de3csK02KJCdDfV+SPyWRBvkU4iHG8Qawb7SGMKLVNnz7grByfxg==",
   "success": true,
-  "projectFilePath": "C:\\Karishma\\Blog\\Demo_BKP\\Blazor_ServerApp\\BlazorServerApp_Stocks\\BlazorServerApp_Stocks.csproj",
+  "projectFilePath": "C:\\Karishma\\Blog\\GitUpload\\BlazorServerApp_Stocks\\BlazorServerApp_Stocks.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\karishma\\.nuget\\packages\\jquery\\1.6.4\\jquery.1.6.4.nupkg.sha512",
     "C:\\Users\\karishma\\.nuget\\packages\\microsoft.aspnet.signalr.js\\2.4.3\\microsoft.aspnet.signalr.js.2.4.3.nupkg.sha512",

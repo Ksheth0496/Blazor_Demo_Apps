@@ -1022,11 +1022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Karishma\\Blog\\Demo_BKP\\Blazor_ServerApp\\BlazorServerApp_Stocks\\BlazorServerApp_Stocks.csproj",
+      "projectUniqueName": "C:\\Karishma\\Blog\\GitUpload\\BlazorServerApp_Stocks\\BlazorServerApp_Stocks.csproj",
       "projectName": "BlazorServerApp_Stocks",
-      "projectPath": "C:\\Karishma\\Blog\\Demo_BKP\\Blazor_ServerApp\\BlazorServerApp_Stocks\\BlazorServerApp_Stocks.csproj",
+      "projectPath": "C:\\Karishma\\Blog\\GitUpload\\BlazorServerApp_Stocks\\BlazorServerApp_Stocks.csproj",
       "packagesPath": "C:\\Users\\karishma\\.nuget\\packages\\",
-      "outputPath": "C:\\Karishma\\Blog\\Demo_BKP\\Blazor_ServerApp\\BlazorServerApp_Stocks\\obj\\",
+      "outputPath": "C:\\Karishma\\Blog\\GitUpload\\BlazorServerApp_Stocks\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

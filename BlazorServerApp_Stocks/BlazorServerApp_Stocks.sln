@@ -5,11 +5,6 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerApp_Stocks", "BlazorServerApp_Stocks.csproj", "{405B638F-EBE6-4BEF-927A-9781B6686DB2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blazor_Server_App", "Blazor_Server_App", "{E5817AC3-2A42-45E0-9B20-96F94A8215A6}"
-	ProjectSection(SolutionItems) = preProject
-		TextFile1.txt = TextFile1.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,9 +18,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{405B638F-EBE6-4BEF-927A-9781B6686DB2} = {E5817AC3-2A42-45E0-9B20-96F94A8215A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9461AA50-F5D0-4FDF-BAEA-262EF45018FC}
