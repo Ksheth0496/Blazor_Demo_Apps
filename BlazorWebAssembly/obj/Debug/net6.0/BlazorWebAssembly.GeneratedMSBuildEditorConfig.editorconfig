@@ -9,45 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = BlazorWebAssembly
 build_property.RootNamespace = BlazorWebAssembly
-build_property.ProjectDir = C:\Karishma\Blog\Demo_Blazor\BlazorWebAssembly\
+build_property.ProjectDir = C:\Karishma\Blog\GitUpload\BlazorWebAssembly\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Karishma\Blog\Demo_Blazor\BlazorWebAssembly
+build_property.MSBuildProjectDirectory = C:\Karishma\Blog\GitUpload\BlazorWebAssembly
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/App.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/Pages/Counter.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/Pages/FetchData.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/Pages/Index.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/Pages/TodoList.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/Pages/TodoList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9kb0xpc3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/Shared/SurveyPrompt.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/_Imports.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/Shared/MainLayout.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-9wcwp57ndo
 
-[C:/Karishma/Blog/Demo_Blazor/BlazorWebAssembly/Shared/NavMenu.razor]
+[C:/Karishma/Blog/GitUpload/BlazorWebAssembly/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-q8yp7cur1t

@@ -1768,11 +1768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Karishma\\Blog\\Demo_Blazor\\BlazorWebAssembly\\BlazorWebAssembly.csproj",
+      "projectUniqueName": "C:\\Karishma\\Blog\\GitUpload\\BlazorWebAssembly\\BlazorWebAssembly.csproj",
       "projectName": "BlazorWebAssembly",
-      "projectPath": "C:\\Karishma\\Blog\\Demo_Blazor\\BlazorWebAssembly\\BlazorWebAssembly.csproj",
+      "projectPath": "C:\\Karishma\\Blog\\GitUpload\\BlazorWebAssembly\\BlazorWebAssembly.csproj",
       "packagesPath": "C:\\Users\\karishma\\.nuget\\packages\\",
-      "outputPath": "C:\\Karishma\\Blog\\Demo_Blazor\\BlazorWebAssembly\\obj\\",
+      "outputPath": "C:\\Karishma\\Blog\\GitUpload\\BlazorWebAssembly\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
